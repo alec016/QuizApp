@@ -1,0 +1,33 @@
+*, *::after, *::before{ box-sizing: border-box; font-family: Gotham Rounded, sans-serif; }
+
+:root{ --hue-neutral: 200; --hue-wrong: 0; --hue-correct: 145; --hue1: 335; --hue2: 167; }
+
+body{ padding: 0; margin: 0; display: flex; width: 100vw; height: 100vh; justify-content: center; align-items: center; background: linear-gradient(to right, hsla(var(--hue1), 100%, 50%, 0.9), hsla(var(--hue2), 100%, 50%, 0.9)); }
+
+body.correct{ --hue1: var(--hue-correct); --hue2: var(--hue-correct); }
+
+body.wrong{ --hue1: var(--hue-wrong); --hue2: var(--hue-wrong); }
+
+.container{ width: 800px; max-width: 80%; background: white; border-radius: 5px; padding: 10px; box-shadow: 0 0 10px 2px; }
+
+.btn-grid{ display: grid; grid-template-columns: repeat(2, auto); gap: 10px; margin: 20px 0; }
+
+.btn{ --hue: var(--hue-neutral); border: 1px solid hsl(var(--hue), 100%, 30%); background: hsl(var(--hue), 100%, 50%); border-radius: 5px; padding: 5px 10px; color: white; outline: none; }
+
+.btn:hover{ border-color: black; }
+
+.btn.correct{ --hue: var(--hue-correct); color: black; }
+
+.btn.wrong{ --hue: var(--hue-wrong); }
+
+.start-btn, .next-btn, .restart-btn{ font-size: 1.5rem; font-weight: bold; padding: 10px 20px; }
+
+.controls{ display: flex; justify-content: center; align-items: center; }
+
+.hide{ display: none; }
+
+.show{ display: flex; }
+
+.puntuacion-modal{ background: rgba(0, 0, 0, .8); width: 100vw; min-height: 100vw; position: fixed; top: 0; left: 0; justify-content: center; align-items: center; flex-direction: column; text-align: center; }
+
+.puntuacion{ font-size: 3rem;  color: white; margin: 1rem; }
